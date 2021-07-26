@@ -88,5 +88,29 @@ namespace WebApi.Controllers
                 });
             }
         }
+
+        [System.Web.Http.Route("GetMoviesDetail")]
+        [System.Web.Http.HttpGet]
+        public HttpResponseMessage GetMoviesDetail(string idMovieRequest)
+        {
+            try
+            {
+                ConfigRequest configRequest = new ConfigRequest()
+                {
+                    ApiKey = ConfigurationManager.AppSettings["Api_Key"],
+                    urlBase = ConfigurationManager.AppSettings["Url_Base"]
+                };
+                var response = this.Request.CreateResponse(HttpStatusCode.OK, moviesBl.GetMoviesDetail(configRequest, idMovieRequest));
+                return response;
+            }
+            catch (Exception eException)
+            {
+                throw new HttpResponseException(new HttpResponseMessage()
+                {
+                    StatusCode = HttpStatusCode.BadRequest,
+                    Content = new StringContent(eException.Message)
+                });
+            }
+        }
     }
 }

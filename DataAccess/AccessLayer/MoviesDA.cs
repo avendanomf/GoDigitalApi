@@ -58,5 +58,21 @@ namespace DataAccess.AccessLayer
             {
             }
         }
+        public MoviesEntity GetMoviesDetail(ConfigRequest configRequest, string idMovieRequest)
+        {
+            try
+            {
+                System.Net.HttpStatusCode status;
+                MoviesEntity LstMovies = new MoviesEntity();
+                Dictionary<string, string> parameter = new Dictionary<string, string>();
+                parameter.Add("api_key", configRequest.ApiKey);
+                parameter.Add("language", "en-US");
+                MoviesEntity objeto = new Util.BaseClient(configRequest.urlBase + "movie/" + idMovieRequest).GetLastMovies<MoviesEntity>(out status, parameter);
+                return objeto;
+            }
+            finally
+            {
+            }
+        }
     }
 }

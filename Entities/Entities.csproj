@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Movies\BelongsToCollectionEntity.cs" />
     <Compile Include="Movies\genresEntity.cs" />
     <Compile Include="Movies\MoviesEntity.cs" />
     <Compile Include="Movies\PopularMovieEntity.cs" />

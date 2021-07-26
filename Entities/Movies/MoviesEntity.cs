@@ -9,8 +9,8 @@ namespace Entities.Movies
     public class MoviesEntity
     {
         public bool adult { get; set; }
-        public object backdrop_path { get; set; }
-        public object belongs_to_collection { get; set; }
+        public string backdrop_path { get; set; }
+        public BelongsToCollectionEntity belongs_to_collection { get; set; }
         public int budget { get; set; }
         public List<genresEntity> genres { get; set; }
         public string homepage { get; set; }
@@ -20,7 +20,7 @@ namespace Entities.Movies
         public string original_title { get; set; }
         public string overview { get; set; }
         public double popularity { get; set; }
-        public object poster_path { get; set; }
+        public string poster_path { get; set; }
         public List<production_companies> production_companies { get; set; }
         public List<production_countries> production_countries { get; set; }
         public string release_date { get; set; }

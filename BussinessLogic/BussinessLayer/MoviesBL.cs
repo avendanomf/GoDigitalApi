@@ -43,5 +43,15 @@ namespace Bussiness.BussinessLayer
             {
             }
         }
+        public MoviesEntity GetMoviesDetail(ConfigRequest configRequest, string idMovieRequest)
+        {
+            try
+            {
+                return moviesda_.GetMoviesDetail(configRequest,idMovieRequest);
+            }
+            finally
+            {
+            }
+        }
     }
 }
